@@ -1,0 +1,128 @@
+:root {
+    --color-s: #ff7f80;
+    --color-a: #ffbf7f;
+    --color-b: #ffdf7f;
+    --color-c: #ffff7f;
+    --color-d: #bfff7f;
+    --color-e: #7fff7f;
+    --color-f: #7fffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #030303;
+    color: #fff;
+    user-select: none;
+}
+
+button {
+    background: none;
+    border: none;
+    outline: none;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 100px;
+}
+
+main {
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.tier {
+    background-color: #333;
+    border: 1px solid #6f6f6f;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    transition: all .3s ease;
+    border: 1px solid #030303;
+
+    & .row-level {
+        cursor: pointer;
+        background: var(--level, #09f);
+        color: #333;
+        font-weight: bold;
+        width: 50px;
+        height: 50px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        & span:focus {
+            outline: 1px solid #fff;
+        }
+    }
+
+    &.drag-over {
+        background: #444;
+        scale: 1.01;
+    }
+
+    & .drag-preview {
+        opacity: .5;
+        pointer-events: none;
+    }
+}
+
+#selector-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+
+    width: 100%;
+    margin: 12px 0;
+
+    & label,
+    & button {
+        cursor: pointer;
+        background: #333;
+        color: #fff;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 34px;
+        height: 34px;
+        border-radius: 12px;
+
+        &:hover {
+            background: #444;
+        }
+    }
+}
+
+#selector-items {
+    border: 1px solid #6f6f6f;
+    min-height: 100px;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+
+    &.files-over {
+        background: #444;
+
+    }
+}
+
+.item-image {
+    object-fit: cover;
+    cursor: grab;
+}
